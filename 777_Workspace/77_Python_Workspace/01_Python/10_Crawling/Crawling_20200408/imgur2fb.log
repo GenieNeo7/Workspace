@@ -1,0 +1,26 @@
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): facebook.com:443
+DEBUG:urllib3.connectionpool:https://facebook.com:443 "GET / HTTP/1.1" 301 0
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.facebook.com:443
+DEBUG:urllib3.connectionpool:https://www.facebook.com:443 "GET / HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:https://www.facebook.com:443 "POST /login.php?login_attempt=1 HTTP/1.1" 302 0
+DEBUG:urllib3.connectionpool:https://www.facebook.com:443 "GET /checkpoint/?next HTTP/1.1" 200 None
+ERROR:root:Login Failed!
+Traceback (most recent call last):
+  File "/Users/puri/Desktop/Dev/Python/Crawling/Crawling_20200408/codeTransform.py", line 61, in login
+    uid = session.cookies['c_user']
+  File "/Users/puri/anaconda3/lib/python3.7/site-packages/requests/cookies.py", line 328, in __getitem__
+    return self._find_no_duplicates(name)
+  File "/Users/puri/anaconda3/lib/python3.7/site-packages/requests/cookies.py", line 399, in _find_no_duplicates
+    raise KeyError('name=%r, domain=%r, path=%r' % (name, domain, path))
+KeyError: "name='c_user', domain=None, path=None"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/puri/Desktop/Dev/Python/Crawling/Crawling_20200408/codeTransform.py", line 73, in <module>
+    main(username='nacel777@nate.com', password='*016727a7')
+  File "/Users/puri/Desktop/Dev/Python/Crawling/Crawling_20200408/codeTransform.py", line 21, in main
+    uid, dtsg = login(session, username, password)
+  File "/Users/puri/Desktop/Dev/Python/Crawling/Crawling_20200408/codeTransform.py", line 68, in login
+    raise Exception('Login Failed!')
+Exception: Login Failed!

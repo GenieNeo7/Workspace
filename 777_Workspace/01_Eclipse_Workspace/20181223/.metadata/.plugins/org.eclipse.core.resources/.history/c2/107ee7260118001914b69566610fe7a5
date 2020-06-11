@@ -1,0 +1,10 @@
+package study.java.basic.telphone;
+
+public class PhoneInfo {
+	String name;
+	String phoneNumber;
+	String birthday;
+	
+	
+}
+    
